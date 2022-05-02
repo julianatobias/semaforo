@@ -1,0 +1,154 @@
+*{
+    background-color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 0;
+}
+                            /* Inicio: corpo do html e css */
+html,body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 50px;
+}
+/* Fim: corpo do html e css */
+
+.buttons #botaoI{
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+                            /* Inicio: botão iniciar */
+#botaoI{
+    color: rgb(0, 0, 0);
+    font-size: 3vh;
+    width: 18vh;
+    height: 40px;
+    margin-left: -97vh;
+    margin-top: 38vw;
+    background-color: white;
+    border: 2px solid #e7e7e7;
+}
+/* Fim: Botão Inicio */
+
+.buttons #botaoI:hover{
+    background-color: #e7e7e7;
+}
+                            /* inicio: Botão Manutenção */
+#botaoM{
+    border: 2px solid #94f7cf;
+    color: rgb(0, 0, 0);
+    font-size: 3vh;
+    height: 40px;
+    width: 18vh;
+    left: 90%;
+}
+/* Fim: Botão Manutenção */
+
+                            /* Inicio: Botão Pedestre */
+#botaoP{
+    border: 2px solid #ff67e8;
+    color: rgb(0, 0, 0);
+    font-size: 3vh;
+    width: 18vh;
+    height: 40px;
+
+}
+/* Fim: Botão pedestre */
+
+                            /* Inicio: Quadrado de fundo*/
+.semaforo{
+   background-color: black;
+    width: 250px; 
+    height: 410px;
+    margin-left: 40vw;
+    margin-top: 10px;
+    border-radius: 30px;
+}
+/* Fim: Quadrado de fundo */
+
+                            /* Inicio: Fundo bolinha Vermelha */
+.vermelho{
+    background-color: rgb(83, 80, 80);
+    border-radius: 200px;
+	width:110px; 
+    height: 110px;
+	position: relative;
+    margin-left: 6vw;
+    margin-top: 16px;
+}
+/* Fim: fundo bolinha vermelha */
+
+                            /* Inicio: Fundo bolinha amarela */
+.amarelo{
+    background-color: rgb(83, 80, 80);
+    border-radius: 200px;
+	width:110px; 
+    height: 110px;
+	position: relative;
+    margin-left: 6vw;
+    margin-top: 16px;
+}
+/* Fim: Fundo bolinha amarela */
+
+                            /* Inicio: Fundo bolinha verde */
+.verde{
+    background-color: rgb(83, 80, 80);
+    border-radius: 200px;
+	width:110px; 
+    height: 110px;
+	position: relative;
+    margin-left: 6vw;
+    margin-top: 16px;
+}
+/* Fim: Fundo bolinha verde */
+
+                            /* Inicio: bolinha vermelha */
+.vermelhoO{
+    width:110px; 
+    height: 110px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+/* Fim: bolinha vermelha  */
+
+                            /* Inicio: bolinha amarela */
+.amareloO{
+    background-color: rgb(255, 255, 57);
+    width:110px; 
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+/* Fim: bolinha amarela */
+
+                            /* Inicio: bolinha verde */
+.verdeE{
+    background-color: rgb(107, 247, 72);
+    width:110px; 
+    height: 110px;
+    border-radius: 50%;
+}
+/* Fim: bolinha verde */
+
+/* Inicio: Pedestre */
+.icone{
+   position: relative;
+   top: -20vh;
+}
+/* Fim: Pedestre */
+
+img{
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 50%;
+}

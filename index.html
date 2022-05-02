@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semaforo</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    
+
+        <!--Fundo preto-->
+        <div class="semaforo">
+            <!--Bolinha vermelha, parar para pedestre-->
+            <div id="vermelho" class="vermelho"></div>
+            <!--Bolinha amarela, diminuir a velocidade-->
+            <div id="amarelo" class="amarelo"></div>
+            <!--Bolinha verde, seguir em frente-->
+            <div id="verde" class="verde"></div>
+        </div>
+                    <!--Icone de pedestre-->
+        <div class="icones">
+
+            <img src="./vermelho.jpg" alt="verm" id="icones">
+        </div>
+    
+
+    <!--Div botão Iniciar, Manutenção e Pedestre-->
+    <div id="buttons">
+        <input id="botaoI" onclick="iniciar()" class="button" type="button" value="Iniciar">
+        <input id="botaoM" onclick="manutencao()" class="button" type="button" value="Manutenção">
+        <input id="botaoP" onclick="pedestre()" class="button" type="button" value="Pedestre">
+
+    </div>
+
+    <script type="application/javascript">
+
+        // Variavéis cores do semáforo
+        var vermelho = document.getElementById('vermelho');
+        var amarelo = document.getElementById('amarelo');
+        var verde = document.getElementById('verde');
+
+        // Variaveis dos icones
+
+        var icone = document.getElementById('icones');
+
+        // Variaveis 
+        var iniciar;
+        var cont = 0;
+        var id;
+        var flag = false;
+        var pedestre;
+        var manutencao;
+
+        // Adicionado as três cores e removendo, contador para a contagem dos segundos
+
+        function iniciar() {
+            var id = setInterval(() => {
+
+                // Se contador for maior ou igual
+                if (cont <= 1) {
+                    // adicionando o verde.
+                    verde.classList.add("verdeE");
+                    // Se contador for igual a vinte ele adiciona a cor amarelo e remove o verde.
+                } else if (cont === 20) {
+                    //Adicionando o amarelo.
+                    amarelo.classList.add("amareloO");
+                    // Removendo o verde.
+                    verde.classList.remove("verdeE");
+                } else if (cont === 30) {
+                    // Adicionando uma imagem, Se contador for igual a 30 ele adiciona o vermelho e remove o amarelo.
+                    vermelho.classList.add("vermelhoO");
+                    // Adicionando a imagem do icone verde.
+                    icone.src = "./verde.jpg"
+                    //Removendo o amarelo
+                    amarelo.classList.remove("amareloO");
+                    // Adicionando uma imagem, Se contador for igual a 34 ele remove o vermelho.
+                } else if (cont === 34) {
+                    // Removendo o vermelho.
+                    vermelho.classList.remove("vermelhoO");
+                    // Adicionando a imagem do icone vermelho.
+                    icone.src = "./vermelho.jpg"
+                    cont = 0;
+                }
+                // contagem regressiva do semaforo
+                cont++;
+
+                
+
+            }, 1000);
+        };
+        // Função Manutenção
+        function manutencao() {
+            var id = setInterval(() => {
+                // Se diferente de falso é verdadeiro
+                if (!flag) {
+                    //Colocando a cor amarelo
+                    amarelo.classList.add('amareloO');
+                    icone.src = './vermelho.jpg'
+                    // Flag se torna verdadeiro
+                    flag = true;
+                } else {
+                    // Removendo a cor Amarelo
+                    amarelo.classList.remove('amareloO');
+                    icone.src = './transparente.jpg'
+                    // E flag continua falso
+                    flag = false;
+                }
+            }, 500)
+        };
+
+        //Função pedestre
+
+
+        // função do botão Pedestre
+        var oPedestre = function() {
+            // limpar qualquer uma das outras funções que estiver rodando
+            clearInterval(pedestre);
+            // aumentando de 1 em 1
+            contSmf += 1;
+            // criação da função setInterval
+            var pedestre = setInterval(function() {
+                // se contador semaforo for menor igual 19 e maior igual a 3
+                if (contSmf <= 19 && contSmf >=3) {
+                    // contador zera
+                    contSmf = 0;
+                    // quando o contador geral estiver no amarelo, aparece
+                    cont = 21;
+                    // chamada da função
+                    startCarro();
+                }
+            // o tempo para piscar, entre as cores e o contador é de 1 em 1 segundo
+            }, 1000);
+        }
+
+
+    </script>
+</body>
+
+</html>
